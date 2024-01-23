@@ -33,6 +33,7 @@ BOARD_BOOT_HEADER_VERSION := 4
 BOARD_RECOVERY_HEADER_VERSION := 2
 
 BOARD_BOOTCONFIG += \
+    androidboot.boot_devices=11100000.ufs \
     androidboot.selinux=permissive
 
 BOARD_KERNEL_CMDLINE += \
@@ -40,6 +41,7 @@ BOARD_KERNEL_CMDLINE += \
 
 BOARD_OVERRIDE_RECOVERY_KERNEL_CMDLINE := true
 BOARD_RECOVERY_KERNEL_CMDLINE += \
+    androidboot.boot_devices=11100000.ufs \
     androidboot.selinux=permissive \
     loop.max_part=7
 
