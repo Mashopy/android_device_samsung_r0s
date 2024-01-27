@@ -30,8 +30,8 @@ PRODUCT_CHARACTERISTICS := nosdcard
 
 # Firmware
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/firmware/fts2ba61y_r0.bin:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/tsp_stm/fts2ba61y_r0.bin \
-    $(LOCAL_PATH)/configs/firmware/fts2ba61y_r0.bin:$(TARGET_RECOVERY_VENDOR_RAMDISK)/vendor/firmware/tsp_stm/fts2ba61y_r0.bin \
+    vendor/samsung/r0s/proprietary/vendor/firmware/tsp_stm/fts2ba61y_r0.bin:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/tsp_stm/fts2ba61y_r0.bin \
+    vendor/samsung/r0s/proprietary/vendor/firmware/tsp_stm/fts2ba61y_r0.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/vendor/firmware/tsp_stm/fts2ba61y_r0.bin \
     $(LOCAL_PATH)/configs/firmware/vangogh_lite_unified.bin:$(TARGET_COPY_OUT_RECOVERY)/root/lib/firmware/sgpu/vangogh_lite_unified.bin \
     $(LOCAL_PATH)/configs/firmware/vangogh_lite_unified.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/lib/firmware/sgpu/vangogh_lite_unified.bin
 
@@ -53,3 +53,6 @@ TARGET_BOARD_PLATFORM := universal9925
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
+
+# Inherit from the proprietary files makefile.
+$(call inherit-product, vendor/samsung/r0s/r0s-vendor.mk)
